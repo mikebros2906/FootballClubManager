@@ -1,0 +1,192 @@
+/* complete body */
+* {
+    margin: 0; /* reset margin to remove default spacing in all elements */
+    padding: 0; /* reset padding to remove default spacing in all elements */
+    box-sizing: border-box; /* Box-sizing set to border box suzh that padding and border are included within the elements */
+}
+
+/* Give some basic properties every part of the login page in the website */
+html, body {
+    height: 100%; /* height of html and body set to 100% of the viewport */
+    font-family: Arial, Helvetica, sans-serif; /* fonts used are defined here */
+    margin: 0; /* default margin removed */
+    padding: 0; /* default padding removed */
+    text-align: center; /* Centre align all text within html and body */
+    overflow: hidden; /* Hide overflow to maintain the layouts */
+}
+
+/* Target the before pseudo element of the main-content to display full-screen background image */
+.main-content::before { 
+    content: ''; /* Add content */
+    position: fixed; /* Fix the image */
+    top: 0; /* Place the image at the top of the page */
+    left: 0; /* Place the image in the top corner */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('../Images/loginImage.jpg'); /* Add the image */
+    background-size: cover; /* Cover the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    filter: blur(8px); /* Apply blur effect */
+    z-index: -1; /* Ensure the image stays behind content */
+}
+
+/* Keep nav bar background unchanged */
+.container-navBar {
+    padding: 10px; /* Apply padding on all sides of the navBar */
+    background-image: linear-gradient(to right, #FEBE10, #c8a800); /* Set background color that transitions from dark to light */
+    color: rgb(255, 255, 255); /* Set text color */
+}
+
+/* Navigation */
+.nav-wrapper {
+    display: flex; /* Display flexbox */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Home on left and menu on right */
+    margin: 0 auto; /* Center the navigation bar */
+    padding: 0 20px; /* Add padding giving space around left and right side of the navBar */
+}
+
+.home-link a {
+    font-size: 16px; /* Set font size */
+    text-decoration: none; /* Remove underline */
+    color: white; /* Set text color */
+    font-weight: bold; /* Set font weight */
+    display: flex; /* Display flexbox */
+    align-items: center; /* Align items vertically */
+    gap: 5px; /* Add space between items */
+}
+
+.navBar a {
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Set font size */
+    color: white; /* Set text color */
+    margin: 0 10px; /* Add margin */
+}
+
+/* Overlay for mobile menu */
+.overlay {
+    height: 100%; /* TOverlay takes full height of the viewport */
+    width: 0; /* Initially, the overlay width is kept to 0 to keep it hidden */
+    position: fixed; /* Overlay position is fixed relative to the viewport */
+    z-index: 1; /* Ensure the overlay stays on top */
+    top: 0; /* Overlay position is fixed at the top of the viewport */
+    left: 0; /* Overlay position fixed at the left */
+    background-color: rgba(0,0,0, 0.9); /* Mostly opaque background for the overlay */
+    overflow-x: hidden; /* horizontal overflow prevents scrolling */
+    transition: 0.5s; /* transition effect ensures smooth open/close of the overlay */
+}
+
+/* Submit button styling */
+.submit input{
+    width: 220px; /* Set width of the submit button */
+}
+
+/* Overlay content */
+.overlay-content {
+    position: relative; /* Position the content */
+    top: 25%; /* overlay postion fixed 25% from the viewport */
+    width: 100%; /* Content-width set to span 100% of the container */
+    text-align: center; /* Center the text */
+    margin-top: 30px; /* Add margin */
+}
+
+.overlay a {
+    padding: 8px; /* padding set around the links */
+    text-decoration: none; /* default underline from links removed */
+    font-size: 36px; /* font size for links set */
+    color: #818181; /* text color set to medium grey */
+    display: block; /* links displayed as block elements */
+    transition: 0.3s; /* Add smooth transition for the opening of the overlay*/
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1; /* Change text color on hover */
+}
+
+.overlay .closebtn {
+    position: absolute; /* Position the close button */
+    top: 20px; /* close button positioned 20px from the top */
+    right: 45px; /* close button positioned 45px from the right */
+    font-size: 60px; /* font-size of close button set 60px */
+}
+
+/* Login Form */
+.login-wrapper {
+    display: flex; /* flexbox layout used for allignment */
+    justify-content: center; /* login form centered */
+    align-items: center; /* Align items vertically in the center */
+    height: 100vh; /* Occupy full height of the viewport */
+    padding: 20px; /* padding set around the login wrapper */
+}
+
+.form-container {
+    display: flex; /* Flexbox layout used to arrange form elements */
+    flex-direction: column; /* Stack items vertically */
+    background: white; /* A white background color for the form container */
+    padding: 40px; /* padding introduced inside the form-container */
+    border-radius: 15px; /* Add border radius making it a smooth box */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow effect for depth*/
+    text-align: center; /* Tet centered in the form container */
+}
+
+/* Add spacing to form elements */
+input {
+    padding: 12px; /* padding introduced each input element */
+    margin-bottom: 15px; /* bottom margin added to space-out elements */
+    border: 1px solid #ccc; /* small border with ligh grey color */
+    border-radius: 10px; /* Add border radius to smoothen out the curves in the box*/
+}
+
+input[type="submit"] {
+    background-color: #4161c0; /* Set background color */
+    color: white; /* Set text color */
+    border: none; /* Remove border */
+    cursor: pointer; /* Add pointer cursor */
+    padding: 12px; /* padding introduced for the submit button */
+    font-size: 18px; /* size of the button's text  */
+    border-radius: 30px; /* Add border radius to smoothen out the curves */
+}
+
+input[type="submit"]:hover {
+    background-color: #2ed9a9; /* Change background color on hover */
+}
+
+/* Add spacing between text links */
+.form-container div {
+    margin-top: 10px; /* Top margin for spacing used */
+}
+
+/* Increase heading size login text */
+h2 {
+    font-size: 28px; /* font size of h2 */
+    margin-bottom: 20px; /* mrgin of 20px set at the bottom */
+}
+
+/* Placeholder styles */
+#username::placeholder,
+#password::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Semi-transparent black placeholder used */
+}
+
+/* Tablet media queries */
+@media (min-width: 200px) and (max-width: 1024px) {
+    .container-leagueTable {
+        margin: 0 auto; /* Center the container horizontally */
+    }
+
+    .form-container{
+        width: 350px; /* Width of the form container set */
+    }
+}
+
+/* Desktop configurations media queries */
+@media only screen and (min-width:1024px) {
+    .leagueTable-wrapper {
+        flex-direction: row; /* Child elements arranged in a row */
+    }
+
+    .form-container{
+        width: 350px; /* width of the form container set for desktop configs */
+    }
+}

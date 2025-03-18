@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <title>Real Madrid Club</title>
+    <link rel="stylesheet" href="../CSS Files/index.css">
+    <style>
+        body {
+            background-image: url('/Images/home-screen.jpg');
+        }
+    </style>
+    <script src="https://kit.fontawesome.com/c878db31aa.js" crossorigin="anonymous"></script>
+    <script src="../JavaScript Files/index.js"></script>
+</head>
+<body>
+<section class="main-content">
+    <header>
+        <nav class="container-navBar">
+            <section class="nav-wrapper">
+                <a href="index.html" class="home-link">
+                    <img src="../Images/Real_Madrid.png" alt="">
+                </a>
+                <section class="icon-wrapper">
+                    <button onclick="openNav()" class="block md:hidden">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <section id="myNav" class="overlay">
+                        <button class="closebtn" onclick="closeNav()">&times;</button>
+                        <section class="overlay-content">
+                            <a href="../HTML Files/login.html">Login</a>
+                            <a href="../HTML Files/team.html">Team</a>
+                            <a href="../HTML Files/fixtures.html">Fixtures</a>
+                            <a href="../Shop/kits.html Files/shop.html">Shop</a>
+                            <a href="../HTML Files/news.html">News</a>
+                            <a href="../HTML Files/extra.html">Extra</a>
+                        </section>
+                    </section>
+                </section>
+                <section class="navBar hidden md:block">
+                    <a href="../HTML Files/login.html">Login</a>
+                    <a href="../HTML Files/team.html">Team</a>
+                    <a href="../HTML Files/fixtures.html">Fixtures</a>
+                    <a href="../Shop/kits.html Files/shop.html">Shop</a>
+                    <a href="../HTML Files/news.html">News</a>
+                    <a href="../HTML Files/extra.html">Extra</a>
+                </section>
+            </section>
+        </nav>
+    </header>
+    
+    <main class="content-wrapper">
+        <section class="leagueTable-wrapper">
+            <section class="container-leagueTable animate-bounce">
+                <table>
+                    <caption>League Table</caption>
+                    <tbody>
+                        <tr><td><a href="real-madrid.html">Real Madrid</a></td></tr>
+                        <tr><td><a href="atletico-madrid.html">Atletico Madrid</a></td></tr>
+                        <tr><td><a href="barcelona.html">Barcelona</a></td></tr>
+                    </tbody>
+                </table>
+            </section>
+        </section>
+        
+        <section class="newsTable-wrapper">
+            <article class="news-table">
+                <table>
+                    <caption>Latest News</caption>
+                    <tbody>
+                        <tr>
+                            <td class="newstable1">
+                                <a href="https://www.espn.com/soccer/story/_/id/44225728/the-inevitability-real-madrid-breaking-atleti-hearts-ucl">
+                                    Real Madrid beat Atlético Madrid in a dramatic penalty shootout Wednesday...
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="newstable2">
+                                <a href="https://www.espn.com/soccer/story/_/id/37581836/sergio-ramos-30-red-cards-real-madrid-monterrey">
+                                    Sergio Ramos' 30 red cards, from Real Madrid to Monterrey
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="newstable3"><a href="https://www.espn.com/soccer/report/_/gameId/733142">
+                                Barcelona exerted their dominance over Real Madrid once again on Wednesday with a 3-1 Clásico win
+                            </a>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+    </main>
+    
+    <footer>
+        <section class="sponsors">
+            <h3><u>Our Sponsors</u></h3>
+            <section class="images-sponsors flex gap-2">
+                <img src="../Images/Adidas.jpeg" alt="Adidas">
+                <img src="../Images/Emirates.png" alt="Emirates">
+                <img src="../Images/hp.jpg" alt="hp">
+            </section>
+        </section>
+        
+        <section class="social-media flex gap-3">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">Twitter</a>
+        </section>
+        
+        <section class="contactDetails">
+            <address>
+                <p>Bernabeu Stadium, Avenida Concha Espina, 1, 28036, Madrid</p>
+                <a href="mailto:presidencia@corp.realmadrid.com">presidencia@corp.realmadrid.com</a>
+                <a href="tel:+34913984382">+34 913984382</a>
+            </address>
+            <p>&copy; 2025 Football Club Manager. All Rights Reserved.</p>
+        </section>
+    </footer>
+</section>
+</body>
+</html>

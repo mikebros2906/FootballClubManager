@@ -1,0 +1,241 @@
+/* General Styles */
+body {
+    font-family: Arial, Helvetica, sans-serif; /* Set default font */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    text-align: center; /* Center text */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    height: 100vh; /* Set height to 100% of viewport height */
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    position: relative; /* Ensure z-index works */
+}
+
+body::after {
+    content: ''; /* Required for pseudo-elements */
+    position: absolute; /* Position the element */
+    top: 0; /* Position from the top */
+    left: 0; /* Position from the left */
+    width: 100%; /* Set width to 100% */
+    height: 100%; /* Set height to 100% */
+    background-image: url('../Images/home-screen.jpg'); /* Set the background image */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    filter: blur(5px); /* Apply blur effect */
+    z-index: -1; /* Ensure the image stays behind content */
+}
+
+/* Navigation Bar */
+.container-navBar {
+    position: relative; /* To allow absolute positioning of search icon */
+    padding: 0px; /* Remove default padding */
+    background-image: linear-gradient(to right, #FEBE10, #c8a800); /* Set background color */
+    color: white; /* Set text color */
+    display: flex; /* Display flexbox */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Home on left and menu on right */
+}
+
+.nav-wrapper {
+    display: flex; /* Display flexbox */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Home on left and menu on right */
+    width: 100%; /* Set width to 100% */
+    padding: 10px 20px; /* Add padding */
+}
+
+.home-link {
+    display: flex; /* Display flexbox */
+    align-items: center; /* Align items vertically */
+    gap: 5px; /* Add space between items */
+    color: white; /* Set text color */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Set font weight */
+}
+
+/* The search icon is now absolutely positioned relative to .container-navBar */
+.search { 
+    position: absolute; /* Position the element */
+    left: 50%; /* Position from the left */
+    top: 50%; /* Position from the top */
+    transform: translate(-50%, -50%); /* Center the icon */
+    background: none; /* Remove background */
+    border: none; /* Remove border */
+    cursor: pointer; /* Change cursor to pointer */
+    color: white; /* Set text color */
+    font-size: 18px; /* Set font size */
+    padding: 10px; /* Add padding */
+}
+
+/* Ensures the hamburger (in icon-wrapper) stays on the right (for mobile) */
+.icon-wrapper button:last-child {
+    margin-left: auto; /* Push the button to the right */
+}
+
+.navBar a {
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Set font size */
+    color: white; /* Set text color */
+    margin: 0 10px; /* Add margin */
+}
+
+/* Content Wrapper */
+.content-wrapper {
+    justify-content: center; /* Center content */
+    padding: 20px; /* Add padding */
+    padding-bottom: 80px; /* Ensure space above fixed footer */
+    position: relative; /* Ensure z-index works */
+    z-index: 1; /* Ensure content stays above the blurred background */
+}
+
+/* League Table */
+.container-leagueTable {
+    text-decoration: none; /* Remove underline */
+    border: 2px solid black; /* Add border */
+    display: table; /* Display as table */
+    padding: 15px; /* Add padding */
+    border-radius: 15px; /* Add border radius */
+    background-color: lemonchiffon; /* Set background color */
+    color: black; /* Set text color */
+    margin: 0 auto; /* Center the table */
+}
+
+.leagueTable-wrapper {
+    display: flex; /* Display flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Align items horizontally */
+    margin: 50px 0; /* Add margin */
+}
+
+.container-leagueTable:hover {
+    animation-play-state: paused; /* Pause animation on hover */ 
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }  /* Start and end point */
+    50% { transform: translateY(-5px); } /* Mid point */
+}
+
+/* News Table */
+.news-table {
+    text-decoration: none; /* Remove underline */
+    border: 2px solid black; /* Add border */
+    background-color: rgba(9, 216, 175, 0.3); /* Set background color */
+    display: flex; /* Display flexbox */
+    align-items: center; /* Align items horizontally */
+    gap: 10px; /* Add space between items */
+    padding: 15px; /* Add padding */
+    border-radius: 15px; /* Add border radius */
+}
+
+.newsTable-wrapper {
+    display: flex; /* Display flexbox */
+    justify-content: center; /* Center items horizontally */
+    margin-top: 20px; /* Add margin */
+}
+
+/* Footer */
+footer {
+    background-color: #222; /* Set background color */
+    color: white; /* Set text color */
+    text-align: center; /* Center text */
+    padding: 20px; /* Add padding */
+    display: flex; /* Display flexbox */
+    flex-direction: column; /* Stack items vertically */
+    align-items: center; /* Align items horizontally */
+    gap: 15px; /* Add space between items */
+    width: 100%; /* Set width to 100% */
+    position: fixed; /* Ensure z-index works */
+    bottom: 0; /* Position from the bottom */
+    left: 0; /* Position from the left */
+}
+
+footer img {
+    height: 50px; /* Set height */
+    width: auto; /* Set width */
+    object-fit: contain; /* Ensure image fits */
+    transition: transform 0.3s ease; /* Add smooth transition */
+} 
+
+footer img:hover {
+    transform: scale(1.1); /* Increase size on hover */
+}
+
+/* Overlay Menu */
+.overlay {
+    height: 100%; 
+    width: 0; 
+    position: fixed; 
+    z-index: 5; /* Ensure the overlay stays on top */
+    top: 0; /* Position from the top */
+    left: 0; /* Position from the left */
+    background-color: rgba(0, 0, 0, 0.9); /* Set background color */ 
+    overflow-x: hidden; /* Prevent horizontal scroll */
+    transition: 0.5s; /* Add smooth transition */
+}
+
+.overlay-content {
+    position: relative; /* Position the element */
+    top: 25%; /* Position from the top */
+    width: 100%; /* Set width to 100% of the viewport */
+    text-align: center; /* Center align the text */
+    margin-top: 30px; /* Add margin */
+}
+
+.overlay a {
+    padding: 8px; /* Add padding */
+    text-decoration: none; /* Remove underline */
+    font-size: 36px; /* Set font size */
+    color: #818181; /* Set text color */
+    display: block; /* Display as block */
+    transition: 0.3s; /* Add smooth transition */
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1; /* Change text color on hover */
+}
+
+.overlay .closebtn {
+    position: absolute; /* Position the element */
+    top: 20px; /* Position from the top */
+    right: 45px; /* Position from the right */
+    font-size: 60px; /* Set font size */
+}
+
+/* Set the size and configurations of the table headings */
+caption {
+    font-size: 15px; /* Set font size of table captions */
+    font-weight: bold; /* Make the table caption bold */
+}
+
+/* Giving property and values to every news in the news table */
+.newstable1, .newstable2, .newstable3 {
+    display: flex; /* use flexbox caption for each news item */
+    justify-content: center; /* justifies the content and centers them horizonatlly */
+    align-items: center; /* align all items in the center */
+    gap: 10px; /* Add space between all the items */
+    padding: 15px; /* Add padding inside each news item */
+    border-radius: 15px; /* round and smoothen the corners of each news items */
+    background-color: rgba(13, 134, 247, 0.3); /* A semi-transparent background color for each news item */
+    border: 2px solid black; /* small black border for all the news elements making them look finer in details */
+    margin-top: 20px; /* margin at the top of each news items ensures simplicity */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1024px) {
+    .container-leagueTable {
+        margin: 0 auto; /* The league table container is centered using this in a horzintal manner */
+    }
+}
+
+/* for screen with a width of maximum 450px */
+@media screen and (max-height: 450px) {
+    .overlay a { font-size: 20px; } /* Size of the overlay link of fonts is described */
+    .overlay .closebtn {
+        font-size: 40px; /* Size of the close button in the overlay */
+        top: 15px; /* Position of the overlay button from the top */
+        right: 35px; /* Position of the overlay button from the right */
+    }
+}

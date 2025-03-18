@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Madrid FC</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../CSS Files/extra.css">
+    <script src="https://kit.fontawesome.com/c878db31aa.js" crossorigin="anonymous"></script>
+    <script src="../JavaScript Files/login.js"></script>
+</head>
+<body>
+    <main class="main-content">
+        <!-- Navigation bar code -->
+        <nav class="container-navBar">
+            <section class="nav-wrapper">
+                <a href="index.html" class="home-link">
+                    <img src="../Images/Real_Madrid.png" alt="">
+                </a>
+                <section class="icon-wrapper flex gap-2">
+                    <button onclick="openNav()" class="block md:hidden">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <nav id="myNav" class="overlay">
+                        <button class="closebtn" onclick="closeNav()">&times;</button>
+                        <section class="overlay-content">
+                            <a href="../HTML Files/login.html">Login</a>
+                    <a href="../HTML Files/team.html">Team</a>
+                    <a href="../HTML Files/fixtures.html">Fixtures</a>
+                    <a href="../Shop/kits.html">Shop</a>
+                    <a href="../HTML Files/news.html">News</a>
+                    <a href="../HTML Files/extra.html">Extra</a>
+                        </section>
+                    </nav>
+                </section>
+                <section class="navBar hidden md:block">
+                    <a href="../HTML Files/login.html">Login</a>
+                    <a href="../HTML Files/team.html">Team</a>
+                    <a href="../HTML Files/fixtures.html">Fixtures</a>
+                    <a href="../Shop/kits.html">Shop</a>
+                    <a href="../HTML Files/news.html">News</a>
+                    <a href="../HTML Files/extra.html">Extra</a>
+                </section>
+            </section>
+        </nav>
+
+        <h1>EXTRA</h1>
+
+        <section class="stadium">
+            <img src="../Images/stadium.jpg" alt="Stadium">
+        </section>
+
+        <h2>GETTING TO THE STADIUM</h2>
+        <section class="Directions">
+            <p>The number 10 tram goes direct to Santiago Bernabeu.<br>3-minute walk from the station.<br>The number 27 tram goes direct to Santiago Bernabeu stop as well.</p>
+        </section>
+
+        <h2>HISTORY</h2>
+        <section class="Records">
+            <article class="Accomplishments">
+                <img src="../Images/trophy.jpg" alt="La Liga">
+                <p>La Liga Titles: 36</p>
+            </article>
+        </section>
+
+        <article class="Accomplishments">
+            <img src="/Images/champs trophy.avif" alt="UCL Titles">
+            <p>Champions League Titles: 15</p>
+        </article>
+
+        <h2>ICONS OF THE CLUB</h2>
+        <section id="Stats">
+            <article class="PlayerStats">
+                <img src="../Images/trophy.jpg" alt="Casillas">
+                <p>Iker Casillas <br> Madrid Appearances: 725 <br> La Liga Titles: 5 <br> Champions League Titles: 3 <br> 2010 FIFA World Cup Winner <br> European Championship: 2</p>
+            </article>
+
+            <article class="PlayerStats">
+                <img src="../Images/Kroos.jpg" alt="Kroos">
+                <p>Toni Kroos <br> Madrid Appearances: 465 <br> La Liga Titles: 4 <br> Champions League Titles: 5 <br> 2014 FIFA World Cup Winner <br> German Footballer of the Year: 2018 & 2024</p>
+            </article>
+
+            <article class="PlayerStats">
+                <img src="../Images/ramos.jpg" alt="Ramos">
+                <p>Sergio Ramos <br> Madrid Appearances: 671 <br> La Liga Titles: 5 <br> Champions League Titles: 4 <br> 2010 FIFA World Cup Winner <br> European Championship: 2</p>
+            </article>
+
+            <article class="PlayerStats">
+                <img src="../Images/ronaldo.jpg" alt="Ronaldo">
+                <p>Cristiano Ronaldo <br> Madrid Appearances: 438 <br> La Liga Titles: 2 <br> Champions League Titles: 4 <br> FIFA Ballon d'Or Winner: 5 <br> All-time leading goalscorer in international football</p>
+            </article>
+
+            <article class="PlayerStats">
+                <img src="/Images/raul.jpg" alt="Raul">
+                <p>Raul Gonzalez <br> Madrid Appearances: 741 <br> La Liga Titles: 6 <br> Champions League Titles: 3 <br> All-time most appearances for Real Madrid <br> La Liga team of the decade 2000's</p>
+            </article>
+        </section>
+    </main>
+
+    <script type="text/javascript">
+        // Toggle dropdown visibility
+        document.getElementById("login").addEventListener("click", (event) => {
+            toggleDropdown(event, event.target.id);
+        });
+        function toggleDropdown(event, id) {
+            const dropdown = document.getElementById(`${id}_submenu`);
+            dropdown.classList.toggle("hidden");
+        }
+    </script>
+</body>
+</html>

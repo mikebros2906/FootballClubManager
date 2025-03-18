@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="../CSS Files/login.css">
+    <script src="https://kit.fontawesome.com/c878db31aa.js" crossorigin="anonymous"></script>
+    <script src="../JavaScript Files/login.js"></script>
+</head>
+<body>
+    <div class="main-content">
+        <header>
+        <nav class="container-navBar">
+          <section class="nav-wrapper">
+            <section class="home-link">
+              <a href="index.html" class="home-link">
+                <img src="../Images/Real_Madrid.png" alt="">
+              </a>
+            </section>
+            <section class="icon-wrapper flex gap-2">
+              <section onclick="openNav()" class="block md:hidden">
+                <i class="fa-solid fa-bars"></i>
+              </section>
+              <section id="myNav" class="overlay">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <section class="overlay-content">
+                  <a href="../HTML Files/login.html">Login</a>
+                    <a href="../HTML Files/team.html">Team</a>
+                    <a href="../HTML Files/fixtures.html">Fixtures</a>
+                    <a href="../Shop/kits.html">Shop</a>
+                    <a href="../HTML Files/news.html">News</a>
+                    <a href="../HTML Files/extra.html">Extra</a>
+                </section>
+              </section>
+            </section>
+            <section class="navBar hidden md:block">
+              <a href="../HTML Files/login.html">Login</a>
+                    <a href="../HTML Files/team.html">Team</a>
+                    <a href="../HTML Files/fixtures.html">Fixtures</a>
+                    <a href="../Shop/kits.html">Shop</a>
+                    <a href="../HTML Files/news.html">News</a>
+                    <a href="../HTML Files/extra.html">Extra</a>
+            </section>
+          </section>
+        </nav>
+      </header>
+    
+      <main>
+        <section class="login-wrapper flex flex-col">
+          <section class="form-container py-2">
+            <h2>Login</h2>
+            <form action="submit_login.php" method="post">
+              <!-- Username Details entry: -->
+              <input type="text" id="username" name="username" placeholder="Username" required>
+              <!-- Password details entry: -->
+              <input type="password" id="password" name="password" placeholder="Password" required>
+              <section class="submit">
+                <input type="submit" value="Login">
+              </section>
+              <section>
+                <a href="createAccount.html">New user ? Create Account</a>
+              </section>
+              <section>
+                <a href="forgotPassword.html">Forgot Password ?</a>
+              </section>
+            </form>
+          </section>
+        </section>
+      </main>
+    </div>
+</body>
+</html>

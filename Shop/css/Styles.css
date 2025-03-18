@@ -1,0 +1,296 @@
+/* Custom Font Integration */
+/* Defines custom fonts for the website */
+@font-face {
+    font-family: 'Exo';
+    src: url('../fonts/Exo-VariableFont_wght.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Anton';
+    src: url('../fonts/Anton-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Arima';
+    src: url('../fonts/Arima-VariableFont_wght.ttf') format('truetype');
+}
+
+/* General Styles */
+/* Sets default font, removes margin/padding, and applies a background color */
+body {
+    font-family: 'Arima', 'Exo', Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+/* Header Section */
+/* Styles the top header bar with a gradient background */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(to right, #FEBE10, #c8a800);
+    color: white;
+    position: relative;
+}
+
+/* Logo */
+/* Ensures the logo image is a fixed height */
+header .logo img {
+    height: 50px;
+}
+
+/* Search Bar */
+/* Styles the search bar with a rounded white background */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 5px;
+    border-radius: 20px;
+}
+
+/* Styles the input field inside the search bar */
+.search-bar input {
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    outline: none;
+    width: 180px;
+}
+
+/* Styles the search button */
+.search-bar button {
+    padding: 8px;
+    margin-left: 5px;
+    border: none;
+    cursor: pointer;
+    background: #0b1672;
+    color: white;
+    border-radius: 15px;
+    transition: background 0.3s ease;
+}
+
+/* Changes button color when hovered */
+.search-bar button:hover {
+    background: #1bc7d1;
+}
+
+/* Navigation */
+/* Styles the navigation menu */
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    font-family: 'Exo', sans-serif;
+}
+
+/* Spaces out the navigation items */
+nav ul li {
+    margin: 0 15px;
+}
+
+/* Makes navigation links bold and white */
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+/* Account Section */
+/* Aligns account-related icons or text */
+.account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Hamburger Menu (for small screens) */
+/* Hidden by default, appears on small screens */
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+/* Slideshow Section */
+/* Placeholder styling for a slideshow area */
+.slideshow {
+    background: #ccc;
+    padding: 20px;
+}
+
+/* Grid Layouts */
+/* Ensures various product sections are evenly spaced */
+.kit-options, .sale-items, .player-container, .clothing-items, .training-items, .souvenirs-items, .souvenir-items, .player-merchandise {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+}
+
+/* Player Grid */
+/* Arranges player items in a 3-column grid */
+.player-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+    margin: auto;
+}
+
+/* Common Item Styles */
+/* Styles the cards for different product items */
+.kit-item, .product-item, .clothing-item, .training-item, .souvenir-item, .player-item {
+    text-align: center;
+    width: 250px;
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Ensures images fit inside the product cards */
+.kit-item img, .product-item img, .clothing-item img, .training-item img, .souvenir-item img, .player-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Adds a slight zoom effect when hovering over images */
+.kit-item img:hover, .product-item img:hover, .clothing-item img:hover, .training-item img:hover, .souvenir-item img:hover, .player-item img:hover {
+    transform: scale(1.05);
+}
+
+/* Sale Box */
+/* Styles a red box for sale items */
+.sale-box {
+    background: red;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Darkens sale box when hovered */
+.sale-box:hover {
+    background: darkred;
+    transform: scale(1.1);
+}
+
+/* Team Photo */
+/* Centers and sizes a team photo */
+.team-photo {
+    text-align: center;
+    margin: 20px 0;
+}
+
+/* Ensures the team photo is centered and properly sized */
+.team-photo-img {
+    width: 100%;
+    max-width: 840px;
+    border-radius: 10px;
+    display: block;
+    margin: auto;
+}
+
+/* Buttons */
+/* Styles buttons inside product cards */
+.product-item button {
+    background: #0b1672;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    font-weight: bold;
+}
+
+/* Changes button color when hovered */
+.product-item button:hover {
+    background: #1bc7d1;
+}
+
+/* Responsive Design (For Small Screens) */
+@media (max-width: 768px) {
+    /* Makes the header stack vertically */
+    header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    /* Centers the search bar */
+    .search-bar {
+        margin: 10px 0;
+    }
+
+    /* Adjusts the account section */
+    .account {
+        margin-top: 10px;
+    }
+
+    /* Styles the mobile menu */
+    nav ul {
+        flex-direction: column;
+        display: none;
+        width: 100%;
+        background: #0b1672;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        text-align: center;
+    }
+
+    /* Makes the mobile menu visible when toggled */
+    nav ul.show {
+        display: flex;
+    }
+
+    /* Spacing for mobile menu items */
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Displays the hamburger menu icon */
+    .hamburger {
+        display: block;
+    }
+
+    /* Adjusts player grid for small screens (2 columns) */
+    .player-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Adjusts souvenir section for small screens */
+    .souvenir-items {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Reduces width of souvenir items */
+    .souvenir-item {
+        width: 200px;
+        padding: 10px;
+    }
+
+    /* Stacks player merchandise items */
+    .player-merchandise {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Adjusts product item width */
+    .product-item {
+        width: 90%;
+        max-width: 300px;
+    }
+}

@@ -1,0 +1,242 @@
+/* complete body */
+html, body {
+    font-family: Arial, Helvetica, sans-serif; /* Set default font-family to the entire page */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* remove default padding */
+    text-align: center; /* align the text in the center */
+    overflow: hidden; /* prevents scrolling by hiding overflow */
+}
+
+/* navigation bar(all) */
+.container-navBar {
+    padding: 10px; /* padding on all sides of the navBar */
+    background-image: linear-gradient(to right, #FEBE10, #c8a800); /* Set background color */
+    color: rgb(255, 255, 255); /* Set text color */
+}
+
+/* Add background image to the login page */
+.nav-wrapper {
+    display: flex; /* Flexbox layout for laying out the elemetns */
+    align-items: center; /* Vertical center the flex items */
+    justify-content: space-between; /* distribute the space between all elements */
+    margin: 0 auto; /* navBar will be centered horizontally */
+    padding: 0 20px; /* horizontal padding added of 20px */
+}
+
+/* The search icon is now absolutely positioned relative to .container-navBar */
+.home-link a {
+  display: flex; /* glexbox alignment used to align icon and text */
+    font-size: 16px; /* Reduced from 18px to 16px */
+    text-decoration: none; /* underline from the links removed */
+    color: white; /* Text color is set to white */
+    font-weight: bold; /* Set font weight */
+    align-items: center; /* Aligns text and image */
+    gap: 5px; /* Adds space between icon and text */
+}
+
+
+
+/* Ensures the hamburger (in icon-wrapper) stays on the right (for mobile) */
+.navBar a {
+  text-decoration: none; /* Remove underline */
+  font-size: 18px; /* Set font size */
+  color: white; /* Set text color */
+  margin: 0 10px; /* Add margin */
+}
+
+/* Content Wrapper */
+.overlay {
+  height: 100%; /* Height set to cover full viewport */
+  width: 0; /* Initially set the width to cover full viewport */
+  position: fixed; /* overlay fixed in place relative to the viewport */
+  z-index: 1; /* this ensures overlay appears above other content */
+  top: 0; /* position overlay at the top */
+  left: 0; /* position overlay at the left */
+  background-color: rgba(0,0,0, 0.9); /* Black background with opcaity 0.9 */
+  overflow-x: hidden; /* Disable horizontal scroll */
+  transition: 0.5s; /*add transitions to the overlay opening and closing in the mobile view */
+}
+
+/* Submit button styling */
+.overlay-content {
+  position: relative; /* Position the content */
+  top: 25%; /* position content 25% from the top */
+  width: 100%; /* container takes full width */
+  text-align: center; /* align text in the center */
+  margin-top: 30px; /* margin of 30px at the top */
+}
+
+/* Overlay for mobile menu */
+.overlay a {
+  padding: 8px; /* padding around the links ensures simplicity */
+  text-decoration: none; /* underline of links removed */
+  font-size: 36px; /* Size of the font set */
+  color: #818181; /* Set text color */
+  display: block; /* Links are displayed as block elements */
+  transition: 0.3s; /* Add transition to the buttons movement in mobile view */
+}
+
+/* Overlay content */
+.overlay a:hover, .overlay a:focus {
+  color: #f1f1f1; /* Change text color when hovering over the links */
+}
+
+.overlay .closebtn {
+  position: absolute; /* Position the close button */
+  top: 20px; /* place at 20px from the top */
+  right: 45px; /* place at 45px from the right */
+  font-size: 60px; /* size of the font set */
+}
+
+/* Add background image to the login page and give it property so that the image does'nt repeat itself, is at the bottom of all contents */
+.main-content::before {
+  content: ''; /* Empty pseudo-element */
+  position: fixed; /* position of the content fixed */
+  top: 0; /* Position from the top */
+  left: 0; /* Position from the left */
+  width: 100%; /* Occupy full width of the viewport */
+  height: 100%; /* Occupy full height of the viewport */
+  background-image: url('../Images/loginImage.jpg'); /* Set background image */
+  background-size: cover; /* Cover the entire element */
+  background-position: center; /* Position the image at the center */
+  background-repeat: no-repeat; /* Prevent image from repeating */
+  filter: blur(8px); /* Apply blur effect */
+  z-index: -1; /* Ensure the image stays behind content */
+}
+
+/* Login Form */
+h2{
+  color: #4161c0; /* Set text color */
+}
+
+.createAccount{
+  display: flex;  /* Flexbox layout for laying out the elemetns */
+  flex-direction: column; /* Stack items vertically */
+  background: white; /* A white background color for the form container */
+  padding: 40px; /* Add padding to the form container */
+  border-radius: 15px; /* Add border radius to smoothen the box */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow effect for depth */
+  text-align: center; /* Center align the text */
+  flex-wrap: wrap; /* Wrap the items */
+  align-content: flex-start; /* Align items at the start */
+  justify-content: center; /* Center align the items */
+  align-items: center; /* Align items vertically */
+}
+
+/* Add space between items */
+.button-wrapper{
+  padding-inline: 20px; /* Add padding to the inline */
+}
+
+/* Add space between items */
+.content-wrapper{
+  justify-content: center; /* Center align the items */
+  width: 100%; /* Set width to 100% */
+  display: flex; /* Flexbox layout for laying out the elemetns */
+  align-content: center; /* Align items vertically */
+  flex-wrap: wrap; /* Wrap the items */
+  height: 100vh; /* Occupy full height of the viewport */
+}
+
+/* Add space between items */
+.inputWrapper input,
+.inputWrapper select{
+  margin-bottom: 5%; /* Add margin between the items */
+  margin-top: 5%; /* Add margin between the items */
+}
+
+/* Add space between items */
+.inputWrapper{
+  width:200px; /* Set width to 200px */
+  display: flex; /* Flexbox layout for laying out the elemetns */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center align the items */
+
+  input{
+    width: 100%; /* Set width to 100% */
+  }
+
+  .sex{
+    select{
+      width: 100%; /* Set width to 100% */
+    }
+  }
+
+  .button-wrapper{
+    width: 100%; /* Set width to 100% */
+    width: 100%; /* Set width to 100% */
+    justify-content: center; /* Center align the items */
+  }
+}
+
+/* Give properties to the input and select fields */
+input, select{
+  padding: 12px; /* Add padding to the input and select fields */
+  margin-bottom: 10px; /* Add margin to the bottom */
+  border: 1px solid #000000; /* Add border to the fields */
+  border-radius: 10px; /* Add border radius to smoothen the curves */
+  width: auto; /* Set width to auto */ 
+}
+
+/*Add properties to the submit and reset button */
+input[type="submit"], input[type="reset"] {
+  background-color: #4161c0; /* Set background color for the buttons*/
+  color: white; /*text color of the button*/
+  border: none; /* Remove border */
+  cursor: pointer; /* Add pointer cursor */
+  padding: 10px; /* Add padding to the buttons */
+  border-radius: 30px; /* Add border radius giving a smooth rounded box*/
+  font-size: 18px; /* Set font size */
+  margin: 5px; /* Add margin to the buttons */
+}
+
+/* Add hover effect to the submit and reset button */
+input[type="submit"]:hover,
+input[type="reset"]:hover{
+  background-color: #2ed9a9; /* Change background color on hover */
+}
+
+/* Add properties to the placeholder */
+select{
+  border-radius: 5px; /* Add border radius to make the boxes have more rounded corners*/
+  padding: 12px; /* Add padding to the select fields */
+  margin-bottom: 10px; /* Add margin to the bottom */
+}
+
+/* Add properties to the placeholder */
+#fullname::placeholder,
+#email::placeholder
+#phone::placeholder,
+#date::placeholder,
+#sex::placeholder{
+  color: rgba(0, 0, 0, 0.5); /* Set color of the placeholder */
+}
+
+/*media screen for height less than 450px */
+@media screen and (max-height: 450px) {
+  /* hamburger button for mobile devices */
+  .overlay a {font-size: 20px}
+  .overlay .closebtn {
+  font-size: 40px; /* Set size of the font */
+  top: 15px; /* position the content 15px from the top */
+  right: 35px; /* position the content 35px from the right */
+  }
+}
+
+/* tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+  /* CSS */
+  
+  .container-leagueTable{
+      margin:0 auto; /* Center the league table horizontally on tablets */
+  }
+  
+}
+
+/* Desktop configurations */
+@media only screen and (min-width:1024px){
+  .leagueTable-wrapper {
+  flex-direction: row; /* Arrange items in a row on desktops */
+  }
+}

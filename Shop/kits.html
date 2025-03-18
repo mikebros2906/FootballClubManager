@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Real Madrid Merchandise Shop</title>
+    <link rel="stylesheet" href="../Shop/css/Styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <!-- Logo -->
+        <section class="logo">
+            <a href="../HTML Files/Index.html">
+                <img src="../Shop/Images/Real_Madrid.jpeg" alt="Real Madrid Badge">
+            </a>
+        </section>
+
+        <!-- Search Bar -->
+        <section class="search-bar">
+            <label for="search" class="visually-hidden">Search Merchandise</label>
+            <input type="search" id="search" placeholder="Search merchandise...">
+            <button type="submit" aria-label="Search">🔍</button>
+        </section>
+
+        <!-- Navigation Menu -->
+        <nav aria-label="Main Navigation">
+            <ul class="nav-links">
+                <li><a href="kits.html">Kit</a></li>
+                <li><a href="training.html">Training</a></li>
+                <li><a href="shop-by-player.html">Shop by Player</a></li>
+                <li><a href="clothing.html">Clothing</a></li>
+                <li><a href="souvenirs.html">Souvenirs</a></li>
+            </ul>
+        </nav>
+
+        <!-- Account and Basket Links -->
+        <section class="account">
+            <section aria-hidden="true">€</section>
+            <a href="account.html">Account</a>
+            <a href="basket.html">Basket</a>
+        </section>
+
+        <!-- Hamburger Menu for Mobile Navigation -->
+        <button class="hamburger" onclick="toggleMenu()" aria-label="Toggle Navigation Menu">☰</button>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Team Photo Section -->
+        <section class="team-photo">
+            <img src="../Shop/Images/teamphotoshop.png" alt="Real Madrid Team celebrating a victory" class="team-photo-img">
+        </section>
+
+        <!-- Kits Section -->
+        <section id="kit">
+            <h2>Choose Your Kit</h2>
+            <section class="kit-options">
+                <!-- Home Kit -->
+                <article class="kit-item">
+                    <a href="kit-home.html">
+                        <img src="../Shop/Images/rmcfmz0196-01.png" alt="Real Madrid Home Kit">
+                        <p>Home</p>
+                    </a>
+                </article>
+                <!-- Away Kit -->
+                <article class="kit-item">
+                    <a href="kit-away.html">
+                        <img src="../Shop/Images/RMCFMZ0201-1.png" alt="Real Madrid Away Kit">
+                        <p>Away</p>
+                    </a>
+                </article>
+                <!-- Third Kit -->
+                <article class="kit-item">
+                    <a href="kit-third.html">
+                        <img src="../Shop/Images/RMCFMZ0204-01.png" alt="Real Madrid Third Kit">
+                        <p>Third</p>
+                    </a>
+                </article>
+                <!-- Goalkeeper Kit -->
+                <article class="kit-item">
+                    <a href="kit-goalkeeper.html">
+                        <img src="../Shop/Images/RMCFMZ0206-01-1.webp" alt="Real Madrid Goalkeeper Kit">
+                        <p>Goalkeeper</p>
+                    </a>
+                </article>
+            </section>
+        </section>
+
+        <!-- Clothing Sale Section -->
+        <section id="clothing">
+            <h2>Exclusive Clothing Sale</h2>
+            <section class="sale-items">
+                <!-- Sale Boxes -->
+                <article class="sale-box">
+                    <a href="sale.html">SALE</a>
+                </article>
+                <article class="sale-box">
+                    <a href="sale.html">UP TO 50% OFF</a>
+                </article>
+                <article class="sale-box">
+                    <a href="sale.html">SALE</a>
+                </article>
+                <article class="sale-box">
+                    <a href="sale.html">UP TO 50% OFF</a>
+                </article>
+            </section>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Real Madrid Shop. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
