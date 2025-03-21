@@ -147,9 +147,7 @@ footer {
     align-items: center; /* Align items horizontally */
     gap: 15px; /* Add space between items */
     width: 100%; /* Set width to 100% */
-    position: fixed; /* Ensure z-index works */
-    bottom: 0; /* Position from the bottom */
-    left: 0; /* Position from the left */
+    position: relative; /* Ensure z-index works */
 }
 
 footer img {
