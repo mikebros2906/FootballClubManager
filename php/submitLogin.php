@@ -1,3 +1,37 @@
+<?php
+if (isset($_POST['username'])) {
+    $server = "localhost";
+    $db_user = "root";
+    $db_pass = "";
+    $database = "footballclub"; // make sure this matches your database name
+
+    // Connect to the DB
+    $con = mysqli_connect($server, $db_user, $db_pass, $database);
+
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $username = $_POST['username']; // assuming this is the email
+
+    // Query the database for this user
+    $sql = "SELECT * FROM users WHERE email = '$username' LIMIT 1";
+    $result = mysqli_query($con, $sql);
+
+    if (mysqli_num_rows($result) == 1) {
+        // Fetch the user data
+        $user = mysqli_fetch_assoc($result);
+        $name = $user['name'];
+        echo "<h1>Welcome $name!</h1>";
+    } else {
+        echo "<h1>User not found. Please try again.</h1>";
+    }
+
+    $con->close();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
