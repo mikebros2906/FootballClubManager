@@ -1,37 +1,3 @@
-<?php
-if (isset($_POST['username'])) {
-    $server = "localhost";
-    $db_user = "root";
-    $db_pass = "";
-    $database = "footballclub"; // make sure this matches your database name
-
-    // Connect to the DB
-    $con = mysqli_connect($server, $db_user, $db_pass, $database);
-
-    if (!$con) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
-
-    $username = $_POST['username']; // assuming this is the email
-
-    // Query the database for this user
-    $sql = "SELECT * FROM users WHERE email = '$username' LIMIT 1";
-    $result = mysqli_query($con, $sql);
-
-    if (mysqli_num_rows($result) == 1) {
-        // Fetch the user data
-        $user = mysqli_fetch_assoc($result);
-        $name = $user['name'];
-        echo "<h1>Welcome $name!</h1>";
-    } else {
-        echo "<h1>User not found. Please try again.</h1>";
-    }
-
-    $con->close();
-}
-?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -39,70 +5,78 @@ if (isset($_POST['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="../css/submitLogin.css">
     <script src="https://kit.fontawesome.com/c878db31aa.js" crossorigin="anonymous"></script>
     <script src="../javascript/login.js"></script>
 </head>
 <body>
-    <div class="main-content">
-        <header>
+<main class="main-content">
+        <!-- Navigation bar code -->
         <nav class="container-navBar">
-          <section class="nav-wrapper">
-            <section class="home-link">
-              <a href="../index.html" class="home-link">
-                <img src="../Images/Real_Madrid.png" alt="">
-              </a>
-            </section>
-            <section class="icon-wrapper flex gap-2">
-              <section onclick="openNav()" class="block md:hidden">
-                <i class="fa-solid fa-bars"></i>
-              </section>
-              <section id="myNav" class="overlay">
-                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-                <section class="overlay-content">
-                  <a href="./login.html">Login</a>
-                  <a href="./team.html">Team</a>
-                  <a href="./fixtures.html">Fixtures</a>
-                  <a href="../Shop/kits.html">Shop</a>
-                  <a href="./news.html">News</a>
-                  <a href="./extra.html">Extra</a>
+            <section class="nav-wrapper">
+                <a href="../index.html" class="home-link">
+                    <img src="../Images/Real_Madrid.png" alt="">
+                </a>
+                <section class="icon-wrapper flex gap-2">
+                    <button onclick="openNav()" class="block md:hidden">
+                        <i class="fa-solid fa-bars"></i>
+                    </button>
+                    <nav id="myNav" class="overlay">
+                        <button class="closebtn" onclick="closeNav()">&times;</button>
+                        <section class="overlay-content">
+                            <a href="./login.html">Login</a>
+                            <a href="./team.html">Team</a>
+                            <a href="./fixtures.html">Fixtures</a>
+                            <a href="../Shop/kits.html">Shop</a>
+                            <a href="./news.html">News</a>
+                            <a href="./extra.html">Extra</a>
+                        </section>
+                    </nav>
                 </section>
-              </section>
+                <section class="navBar hidden md:block">
+                    <a href="./login.html">Login</a>
+                    <a href="./team.html">Team</a>
+                    <a href="./fixtures.html">Fixtures</a>
+                    <a href="../Shop/kits.html">Shop</a>
+                    <a href="./news.html">News</a>
+                    <a href="./extra.html">Extra</a>
+                </section>
             </section>
-            <section class="navBar hidden md:block">
-              <a href="./login.html">Login</a>
-              <a href="./team.html">Team</a>
-              <a href="./fixtures.html">Fixtures</a>
-              <a href="../Shop/kits.html">Shop</a>
-              <a href="./news.html">News</a>
-              <a href="./extra.html">Extra</a>
-            </section>
-          </section>
         </nav>
-      </header>
-    
-      <main>
-        <section class="login-wrapper flex flex-col">
-          <section class="form-container py-2">
-            <h2>Login</h2>
-            <form action="../php/submitLogin.php" method="post">
-              <!-- Username Details entry: -->
-              <input type="text" id="username" name="username" placeholder="Username" required>
-              <!-- Password details entry: -->
-              <input type="password" id="password" name="password" placeholder="Password" required>
-              <section class="submit">
-                <input type="submit" value="Login">
-              </section>
-              <section>
-                <a href="./createAccount.html">New user ? Create Account</a>
-              </section>
-              <section>
-                <a href="./forgotPassword.html">Forgot Password ?</a>
-              </section>
-            </form>
-          </section>
+<main class="loginSuccess-wrapper">
+
+<section class="form-box">
+  <h2>Login Success</h2>
+  <?php
+  if (isset($_POST['username'])) {
+    $server = "localhost";
+    $db_user = "root";
+    $db_pass = "";
+    $database = "footballclub";
+    $con = mysqli_connect($server, $db_user, $db_pass, $database);
+    if (!$con) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+    $username = $_POST['username'];
+    $sql = "SELECT * FROM users WHERE email = '$username' LIMIT 1";
+    $result = mysqli_query($con, $sql);
+    if (mysqli_num_rows($result) == 1) {
+        $user = mysqli_fetch_assoc($result);
+        $name = $user['name'];
+        echo "<h1>Welcome $name!</h1>";
+    } else {
+        echo "<h1>User not found. Please try again.</h1>";
+    }
+    $con->close();
+  }
+  ?>
+  <button class="back-home-btn" onclick="window.location.href='../index.html'">
+    Back to Home
+  </button>
+</section>
+</main>
+
         </section>
-      </main>
-    </div>
+</main>
 </body>
 </html>
