@@ -4,7 +4,7 @@ html, body {
     margin: 0; /* Remove default margin */
     padding: 0; /* remove default padding */
     text-align: center; /* align the text in the center */
-    overflow: hidden; /* prevents scrolling by hiding overflow */
+    /* overflow: hidden; prevents scrolling by hiding overflow */
 }
 
 /* navigation bar(all) */

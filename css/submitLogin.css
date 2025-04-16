@@ -143,8 +143,15 @@ html, body {
     margin-top: 10px;
 }
 
+.button-wrapper {
+    display: flex; /* Use flexbox to align the buttons horizontally */
+    justify-content: center; /* Center buttons horizontally */
+    gap: 10px; /* Space between the buttons */
+    margin-top: 20px; /* Space above the buttons */
+}
+
 /* Styled back to home button */
-.back-home-btn {
+.back-home-btn, .retry-btn {
     background-color: #4161c0;
     color: white;
     padding: 12px 24px;
@@ -155,8 +162,23 @@ html, body {
     transition: background-color 0.3s ease;
 }
 
-.back-home-btn:hover {
+.back-home-btn:hover, .retry-btn:hover {
     background-color: #2ed9a9;
+}
+
+.retry-btn {
+    background-color: #4161c0; /* Same as back-home-btn for consistency */
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.retry-btn:hover {
+    background-color: #2ed9a9; /* Same hover effect for retry button */
 }
 
 .login-wrapper {

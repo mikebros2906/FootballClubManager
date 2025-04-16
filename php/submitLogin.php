@@ -46,33 +46,61 @@
 <main class="loginSuccess-wrapper">
 
 <section class="form-box">
-  <h2>Login Success</h2>
+  <h2>Login Situation</h2>
   <?php
-  if (isset($_POST['username'])) {
+  $show_retry_button = true;  // Default state is to show the retry button
+
+  if (isset($_POST['username']) && isset($_POST['password'])) {
     $server = "localhost";
     $db_user = "root";
     $db_pass = "";
     $database = "footballclub";
     $con = mysqli_connect($server, $db_user, $db_pass, $database);
+
     if (!$con) {
         die("Connection failed: " . mysqli_connect_error());
     }
-    $username = $_POST['username'];
+
+    // Sanitize user inputs to prevent SQL injection
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+
+    // SQL query to fetch the user based on the email
     $sql = "SELECT * FROM users WHERE email = '$username' LIMIT 1";
     $result = mysqli_query($con, $sql);
+
     if (mysqli_num_rows($result) == 1) {
         $user = mysqli_fetch_assoc($result);
-        $name = $user['name'];
-        echo "<h1>Welcome $name!</h1>";
+
+        // Check if the entered password matches the stored hash
+        if (password_verify($password, $user['password'])) {
+            $name = $user['name'];
+            echo "<h1>Welcome $name!</h1>";
+            $show_retry_button = false;  // Hide retry button after successful login
+        } else {
+            echo "<h1>Incorrect password. Please try again.</h1>";
+        }
     } else {
         echo "<h1>User not found. Please try again.</h1>";
     }
+
     $con->close();
   }
-  ?>
+?>
+
+<section class="button-wrapper">
   <button class="back-home-btn" onclick="window.location.href='../index.html'">
     Back to Home
   </button>
+
+  <?php if ($show_retry_button): ?>
+    <button class="retry-btn" onclick="window.location.href='../Pages/login.html'">
+      Retry
+    </button>
+  <?php endif; ?>
+</section>
+
+
 </section>
 </main>
 
