@@ -102,7 +102,7 @@
                 <?php endif; ?>
 
                 <?php if ($show_change_details_button): ?>
-                    <button class="change-details-btn" onclick="window.location.href='../Pages/changeDetails.html'">
+                    <button class="change-details-btn" onclick="window.location.href='../php/changeDetails.php'">
                         Change Account Details
                     </button>
                 <?php endif; ?>

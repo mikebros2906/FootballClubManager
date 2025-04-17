@@ -1,0 +1,340 @@
+/* complete body */
+* {
+    margin: 0; /* reset margin to remove default spacing in all elements */
+    padding: 0; /* reset padding to remove default spacing in all elements */
+    box-sizing: border-box; /* Box-sizing set to border box suzh that padding and border are included within the elements */
+}
+
+/* Give some basic properties every part of the login page in the website */
+html, body {
+    height: 100%; /* height of html and body set to 100% of the viewport */
+    font-family: Arial, Helvetica, sans-serif; /* fonts used are defined here */
+    margin: 0; /* default margin removed */
+    padding: 0; /* default padding removed */
+    text-align: center; /* Centre align all text within html and body */
+    overflow: hidden; /* Hide overflow to maintain the layouts */
+}
+
+/* Target the before pseudo element of the main-content to display full-screen background image */
+.main-content::before { 
+    content: ''; /* Add content */
+    position: fixed; /* Fix the image */
+    top: 0; /* Place the image at the top of the page */
+    left: 0; /* Place the image in the top corner */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('../Images/loginImage.jpg'); /* Add the image */
+    background-size: cover; /* Cover the entire screen */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Prevent image from repeating */
+    filter: blur(8px); /* Apply blur effect */
+    z-index: -1; /* Ensure the image stays behind content */
+}
+
+/* Keep nav bar background unchanged */
+.container-navBar {
+    padding: 10px; /* Apply padding on all sides of the navBar */
+    background-image: linear-gradient(to right, #FEBE10, #c8a800); /* Set background color that transitions from dark to light */
+    color: rgb(255, 255, 255); /* Set text color */
+}
+
+/* Navigation */
+.nav-wrapper {
+    display: flex; /* Display flexbox */
+    align-items: center; /* Align items vertically */
+    justify-content: space-between; /* Home on left and menu on right */
+    margin: 0 auto; /* Center the navigation bar */
+    padding: 0 20px; /* Add padding giving space around left and right side of the navBar */
+}
+
+.home-link a {
+    font-size: 16px; /* Set font size */
+    text-decoration: none; /* Remove underline */
+    color: white; /* Set text color */
+    font-weight: bold; /* Set font weight */
+    display: flex; /* Display flexbox */
+    align-items: center; /* Align items vertically */
+    gap: 5px; /* Add space between items */
+}
+
+.navBar a {
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Set font size */
+    color: white; /* Set text color */
+    margin: 0 10px; /* Add margin */
+}
+
+/* Overlay for mobile menu */
+.overlay {
+    height: 100%; /* TOverlay takes full height of the viewport */
+    width: 0; /* Initially, the overlay width is kept to 0 to keep it hidden */
+    position: fixed; /* Overlay position is fixed relative to the viewport */
+    z-index: 1; /* Ensure the overlay stays on top */
+    top: 0; /* Overlay position is fixed at the top of the viewport */
+    left: 0; /* Overlay position fixed at the left */
+    background-color: rgba(0,0,0, 0.9); /* Mostly opaque background for the overlay */
+    overflow-x: hidden; /* horizontal overflow prevents scrolling */
+    transition: 0.5s; /* transition effect ensures smooth open/close of the overlay */
+}
+
+/* Submit button styling */
+.submit input{
+    width: 220px; /* Set width of the submit button */
+}
+
+/* Overlay content */
+.overlay-content {
+    position: relative; /* Position the content */
+    top: 25%; /* overlay postion fixed 25% from the viewport */
+    width: 100%; /* Content-width set to span 100% of the container */
+    text-align: center; /* Center the text */
+    margin-top: 30px; /* Add margin */
+}
+
+.overlay a {
+    padding: 8px; /* padding set around the links */
+    text-decoration: none; /* default underline from links removed */
+    font-size: 36px; /* font size for links set */
+    color: #818181; /* text color set to medium grey */
+    display: block; /* links displayed as block elements */
+    transition: 0.3s; /* Add smooth transition for the opening of the overlay*/
+}
+
+.overlay a:hover, .overlay a:focus {
+    color: #f1f1f1; /* Change text color on hover */
+}
+
+.overlay .closebtn {
+    position: absolute; /* Position the close button */
+    top: 20px; /* close button positioned 20px from the top */
+    right: 45px; /* close button positioned 45px from the right */
+    font-size: 60px; /* font-size of close button set 60px */
+}
+
+/* Success box */
+.success-box {
+    background-color: white;
+    padding: 40px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 400px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    margin-top: 100px;
+}
+
+.success-box h1 {
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+/* Button styles */
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.back-home-btn, .login-btn {
+    background-color: #4161c0;
+    color: white;
+    padding: 12px 24px;
+    font-size: 16px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.back-home-btn:hover, .login-btn:hover {
+    background-color: #2ed9a9;
+}
+
+.createAccount {
+    background-color: white; /* Background color for the box */
+    padding: 40px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 500px; /* Adjusted width for the box */
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Added shadow for depth effect */
+    text-align: left; /* Align text to the left for better form display */
+    position: relative;
+    z-index: 2; /* Ensure it stays above background image */
+    margin-top: 100px; /* Centering the box vertically */
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+/* Responsive design */
+@media (min-width: 200px) and (max-width: 1024px) {
+    .success-box {
+        width: 90%;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .success-box {
+        width: 400px;
+    }
+}
+
+/* Center the account update section box with depth effect */
+.createAccount {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    width: 90%;
+    max-width: 350px;
+    margin: 100px auto;
+}
+
+/* Form fields layout */
+.inputWrapper {
+    width: 100%; /* Set width to 100% */
+    display: flex; /* Flexbox layout for form fields */
+    flex-direction: column; /* Stack the fields vertically */
+    justify-content: center; /* Center align the items */
+}
+
+.inputWrapper input,
+.inputWrapper select {
+    margin-bottom: 5%; /* Add margin between the fields */
+    margin-top: 5%; /* Add margin on top of each input field */
+    padding: 12px; /* Padding for input fields */
+    border: 1px solid #000000; /* Border around input fields */
+    border-radius: 10px; /* Rounded corners for input fields */
+    width: 100%; /* Make the fields full-width */
+}
+
+/* Select field */
+.sex select {
+    width: 100%; /* Full width for the select box */
+}
+
+/* Button layout */
+.button-wrapper {
+    width: 100%; /* Full width for button container */
+    display: flex; /* Flexbox for button layout */
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 10px; /* Add spacing between the buttons */
+    margin-top: 20px; /* Margin at the top */
+}
+
+/* Button styling */
+input[type="submit"],
+input[type="reset"] {
+    background-color: #4161c0; /* Background color for buttons */
+    color: white; /* White text color */
+    border: none; /* Remove borders */
+    cursor: pointer; /* Pointer cursor on hover */
+    padding: 10px 20px; /* Padding for the buttons */
+    border-radius: 30px; /* Rounded corners */
+    font-size: 18px; /* Font size for buttons */
+    margin: 5px; /* Margin between buttons */
+}
+
+/* Button hover effect */
+input[type="submit"]:hover,
+input[type="reset"]:hover {
+    background-color: #2ed9a9; /* Background color on hover */
+}
+
+/* Input field placeholder */
+#fullname::placeholder,
+#email::placeholder,
+#phone::placeholder,
+#date::placeholder,
+#sex::placeholder {
+    color: rgba(0, 0, 0, 0.5); /* Placeholder color */
+}
+
+/* Content wrapper - Center the entire page */
+.content-wrapper {
+    display: flex; /* Flexbox layout for centering */
+    justify-content: center; /* Center the content horizontally */
+    align-items: center; /* Center the content vertically */
+    width: 100%; /* Full width */
+    height: 100vh; /* Full height of the viewport */
+}
+
+/* Main container background */
+.main-content::before {
+    content: ''; /* Empty pseudo-element for the background image */
+    position: fixed; /* Fixed position */
+    top: 0; /* Top position */
+    left: 0; /* Left position */
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-image: url('../Images/loginImage.jpg'); /* Background image */
+    background-size: cover; /* Cover the entire screen */
+    background-position: center; /* Center the background image */
+    background-repeat: no-repeat; /* Prevent repeating the background */
+    filter: blur(8px); /* Blur effect on the background */
+    z-index: -1; /* Ensure the background stays behind content */
+}
+
+/* Success box for confirmation message */
+.success-box {
+    background-color: white; /* White background */
+    padding: 40px; /* Padding around the box */
+    margin: 20px auto; /* Center the box */
+    width: 90%; /* Set width to 90% */
+    max-width: 400px; /* Maximum width */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    text-align: center; /* Center the text */
+    margin-top: 100px; /* Add margin at the top */
+}
+
+/* Success box title */
+.success-box h1 {
+    font-size: 24px; /* Font size for success message */
+    margin-bottom: 30px; /* Margin at the bottom */
+    color: #333; /* Dark color for text */
+}
+
+/* Button styling for success box */
+.back-home-btn,
+.login-btn {
+    background-color: #4161c0; /* Button background */
+    color: white; /* White text color */
+    padding: 12px 24px; /* Padding inside the buttons */
+    font-size: 16px; /* Font size */
+    border: none; /* Remove border */
+    border-radius: 25px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Button hover effect */
+.back-home-btn:hover,
+.login-btn:hover {
+    background-color: #2ed9a9; /* Button color on hover */
+}
+
+/* Responsive design for smaller screens */
+@media (max-width: 1024px) {
+    .createAccount {
+        width: 90%; /* Full width for smaller screens */
+    }
+
+    .success-box {
+        width: 90%; /* Full width for success box */
+    }
+}
