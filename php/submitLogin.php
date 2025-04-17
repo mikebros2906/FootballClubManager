@@ -24,12 +24,12 @@
                 <nav id="myNav" class="overlay">
                     <button class="closebtn" onclick="closeNav()">&times;</button>
                     <section class="overlay-content">
-                        <a href="./login.html">Login</a>
-                        <a href="./team.html">Team</a>
-                        <a href="./fixtures.html">Fixtures</a>
+                        <a href="../Pages/Login.html">Login</a>
+                        <a href="../Pages/team.html">Team</a>
+                        <a href="../Pages/fixtures.html">Fixtures</a>
                         <a href="../Shop/kits.html">Shop</a>
-                        <a href="./news.html">News</a>
-                        <a href="./extra.html">Extra</a>
+                        <a href="../Pages/news.html">News</a>
+                        <a href="../Pages/extra.html">Extra</a>
                     </section>
                 </nav>
             </section>

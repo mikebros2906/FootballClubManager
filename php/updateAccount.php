@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <h1>Account details updated successfully!</h1>
                 <section class='button-wrapper'>
                     <button class='back-home-btn' onclick='window.location.href=\"../index.html\"'>Back to Home</button>
-                    <button class='login-btn' onclick='window.location.href=\"./login.html\"'>Back to Login</button>
+                    <button class='login-btn' onclick='window.location.href=\"../Pages/login.html\"'>Back to Login</button>
                 </section>
               </div>";
     } else {
