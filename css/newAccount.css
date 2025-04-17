@@ -64,6 +64,24 @@ html, body {
     margin: 0 10px; /* Add margin */
 }
 
+/* Overlay for mobile menu */
+.overlay {
+    height: 100%; /* TOverlay takes full height of the viewport */
+    width: 0; /* Initially, the overlay width is kept to 0 to keep it hidden */
+    position: fixed; /* Overlay position is fixed relative to the viewport */
+    z-index: 1; /* Ensure the overlay stays on top */
+    top: 0; /* Overlay position is fixed at the top of the viewport */
+    left: 0; /* Overlay position fixed at the left */
+    background-color: rgba(0,0,0, 0.9); /* Mostly opaque background for the overlay */
+    overflow-x: hidden; /* horizontal overflow prevents scrolling */
+    transition: 0.5s; /* transition effect ensures smooth open/close of the overlay */
+}
+
+/* Submit button styling */
+.submit input{
+    width: 220px; /* Set width of the submit button */
+}
+
 /* Overlay content */
 .overlay-content {
     position: relative; /* Position the content */
@@ -93,38 +111,8 @@ html, body {
     font-size: 60px; /* font-size of close button set 60px */
 }
 
-.home-link a {
-    font-size: 16px; /* Set font size */
-    text-decoration: none; /* Remove underline */
-    color: white; /* Set text color */
-    font-weight: bold; /* Set font weight */
-    display: flex; /* Display flexbox */
-    align-items: center; /* Align items vertically */
-    gap: 5px; /* Add space between items */
-}
-
-.navBar a {
-    text-decoration: none; /* Remove underline */
-    font-size: 18px; /* Set font size */
-    color: white; /* Set text color */
-    margin: 0 10px; /* Add margin */
-}
-
-/* Overlay for mobile menu */
-.overlay {
-    height: 100%; /* TOverlay takes full height of the viewport */
-    width: 0; /* Initially, the overlay width is kept to 0 to keep it hidden */
-    position: fixed; /* Overlay position is fixed relative to the viewport */
-    z-index: 1; /* Ensure the overlay stays on top */
-    top: 0; /* Overlay position is fixed at the top of the viewport */
-    left: 0; /* Overlay position fixed at the left */
-    background-color: rgba(0,0,0, 0.9); /* Mostly opaque background for the overlay */
-    overflow-x: hidden; /* horizontal overflow prevents scrolling */
-    transition: 0.5s; /* transition effect ensures smooth open/close of the overlay */
-}
-
-/* Container for login box with shadow */
-.form-box {
+/* Success box */
+.success-box {
     background-color: white;
     padding: 40px;
     margin: 20px auto;
@@ -133,41 +121,25 @@ html, body {
     border-radius: 15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     text-align: center;
+    margin-top: 100px;
 }
 
-/* Style for welcome message inside the box */
-.form-box h1 {
+.success-box h1 {
     font-size: 24px;
     margin-bottom: 30px;
     color: #333;
-    margin-top: 10px;
 }
 
+/* Button styles */
 .button-wrapper {
-    display: flex; /* Use flexbox to align the buttons horizontally */
-    justify-content: center; /* Center buttons horizontally */
-    gap: 10px; /* Space between the buttons */
-    margin-top: 20px; /* Space above the buttons */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
 }
 
-/* Styled back to home button */
-.back-home-btn, .retry-btn, .change-details-btn {
-    background-color: #4161c0; /* Same background color for consistency */
-    color: white; /* White text color */
-    padding: 12px 24px; /* Padding for spacing */
-    font-size: 16px; /* Font size for the text */
-    border: none; /* Remove border */
-    border-radius: 25px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease; /* Smooth background color transition */
-}
-
-.back-home-btn:hover, .retry-btn:hover, .change-details-btn:hover {
-    background-color: #2ed9a9; /* Change background color on hover */
-}
-
-.retry-btn {
-    background-color: #4161c0; /* Same as back-home-btn for consistency */
+.back-home-btn, .login-btn {
+    background-color: #4161c0;
     color: white;
     padding: 12px 24px;
     font-size: 16px;
@@ -177,42 +149,19 @@ html, body {
     transition: background-color 0.3s ease;
 }
 
-.retry-btn:hover {
-    background-color: #2ed9a9; /* Same hover effect for retry button */
+.back-home-btn:hover, .login-btn:hover {
+    background-color: #2ed9a9;
 }
 
-.login-wrapper {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height */
-    padding: 20px; /* Add space around the edges */
+/* Responsive design */
+@media (min-width: 200px) and (max-width: 1024px) {
+    .success-box {
+        width: 90%;
+    }
 }
 
-.form-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    width: 100%; /* Take full width */
-}
-
-/* Ensure the wrapper takes up full height of the screen and centers the box */
-.loginSuccess-wrapper {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height */
-    padding: 20px; /* Padding around edges */
-}
-
-/* Ensure the form box containing the content is centered */
-.form-box {
-    background-color: white;
-    padding: 40px;
-    margin: 0; /* Remove any margin */
-    width: 100%; /* Takes up 90% of screen width */
-    max-width: 400px; /* Maximum width of the box */
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    text-align: center;
+@media only screen and (min-width: 1024px) {
+    .success-box {
+        width: 400px;
+    }
 }
